@@ -14,10 +14,9 @@ namespace OsuMixer {
         private static readonly int port = 6667;
         private static string userName;
         private static string serverPass;
-        private static string channel;
-        private static readonly string ircPath = "Config/ircIDPW.txt";
+        public static string channel;
         public OsuIRC () {
-            string[] information = File.ReadAllLines(ircPath);
+            string[] information = File.ReadAllLines(Config.ircPath);
             try {
                 userName = information[0];
                 serverPass = information[1];
@@ -29,7 +28,7 @@ namespace OsuMixer {
             }
 
             Connect();
-            new Thread(new ThreadStart(Listen)).Start();
+            new Thread (new ThreadStart(Listen)).Start();
         }
 
         //Not sure which connect function I need to use so I connect with everything at once lmao.
@@ -49,7 +48,6 @@ namespace OsuMixer {
         private void IrcClient_OnDisconnected (object sender, EventArgs e) {
             FancyConsole.WriteLine("Disconnected! Trying to reconnect.", moduleName, FancyConsole.LogSeverity.Error);
             Connect();
-
         }
 
         private void IrcClient_OnConnected (object sender, EventArgs e) {

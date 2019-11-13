@@ -11,9 +11,9 @@ namespace OsuMixer {
         private static bool osuApi = false;
         private static bool mixerClientID = false;
         private static bool osuIRC = false;
-        private static readonly string mixerPath = "Config/mixerClientID.txt";
-        private static readonly string osuPath = "Config/osuApiKey.txt";
-        private static readonly string ircPath = "Config/ircIDPW.txt";
+        public static readonly string mixerPath = "Config/mixerClientID.txt";
+        public static readonly string osuPath = "Config/osuApiKey.txt";
+        public static readonly string ircPath = "Config/ircIDPW.txt";
         private static readonly string configPath = "Config";
         private static void CheckOsu () {
             if (!File.Exists(osuPath)) {
