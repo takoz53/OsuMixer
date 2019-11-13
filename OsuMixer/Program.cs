@@ -23,6 +23,9 @@ namespace OsuMixer
             BeatmapParser beatmapParser = new BeatmapParser();
             FancyConsole.WriteLine("Setting up Mixer Connection", moduleName);
             //MixerChatBase chatBase = new MixerChatBase();
+            FancyConsole.WriteLine("Starting IRC.", moduleName);
+            OsuIRC osuIRC = new OsuIRC();
+            osuIRC.SendChatMessage("Test.", "takoz53");
             Beatmap beatmap = await beatmapParser.GetBeatmapInfo("https://osu.ppy.sh/beatmapsets/757291#osu/1707563");
             if(beatmap == null)
             {

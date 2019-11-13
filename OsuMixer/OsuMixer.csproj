@@ -36,6 +36,9 @@
     <Reference Include="CSharpOsu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CSharpOsu.1.4.9.3\lib\CSharpOsu.dll</HintPath>
     </Reference>
+    <Reference Include="Meebey.SmartIrc4net, Version=0.4.5.0, Culture=neutral, PublicKeyToken=7868485fbf407e0f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SmartIrc4net.1.1\lib\Meebey.SmartIrc4net.dll</HintPath>
+    </Reference>
     <Reference Include="Mixer.Base, Version=0.8.4.12, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\mixer-client-csharp.0.8.4.12-beta\lib\netstandard2.0\Mixer.Base.dll</HintPath>
     </Reference>
@@ -59,6 +62,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="FancyConsole.cs" />
     <Compile Include="MixerChatBase.cs" />
+    <Compile Include="OsuIRC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
