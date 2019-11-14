@@ -1,8 +1,4 @@
 ﻿using OsuSharp;
-using OsuSharp.Attributes;
-using OsuSharp.Entities;
-using OsuSharp.Enums;
-using OsuSharp.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +11,8 @@ using System.Threading;
 namespace OsuMixer
 {
     //Either Remove CSharpOsu because no async funcs, or remove OsuSharp because no way to get beatmap sets
-    class BeatmapParser {
-        private OsuClient Client { get; }
+    class BeatmapParser : IDisposable {
+        private OsuClient Client { get; set; }
         public static readonly string moduleName = "Beatmap Parser";
         public static readonly Regex setRegex = new Regex(@"^(https:\/\/|http:\/\/)?osu.ppy.sh\/beatmapsets\/([0-9]{1,19})\/?$");
         public static readonly Regex beatmapRegex = new Regex(@"(https:\/\/|http:\/\/)?osu.ppy.sh\/beatmapsets\/[0-9]{1,19}#(osu|fruits|mania|taiko)\/([0-9]{1,19})\/?");
@@ -60,6 +56,10 @@ namespace OsuMixer
                 }
             }
             return beatmap;
+        }
+
+        public void Dispose () {
+            Client = null;
         }
     }
 }
