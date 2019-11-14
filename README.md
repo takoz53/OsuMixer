@@ -2,7 +2,22 @@
 There is no Mikuia for Mixer so I thought of creating a simple Bot, which sends Chat requests from Mixer to you In-Game.
 
 ## Setup
-All you need is a clientID (for now) from Mixer and an ApiKey from osu!. You also need a Bot Account (You don't. You should get one though!) for osu! to have someone send you the Beatmaps. You set those up and you're good to go.
+### Mixer
+1. Set up a Bot account from https://mixer.com/lab/oauth
+1. Don't use a Secret Key
+1. Use http://www.google.com as Website or something
+1. Use localhost as hosts
+1. Get the Client ID and Put it in Config/MixerClientID...
 
-### Why it works without a Bot Account
-You can send yourself a message through IRC. You can't message yourself through client though. Recieving maps is possible without a Bot account. I don't take responsibilities if you get Chatbanned 5 mins etc. though. I do not know which consequences could happen.
+### Osu
+1. Get an API Key from https://osu.ppy.sh/p/api
+1. Paste it into your Config/OsuApiKey...
+
+### Osu IRC
+1. Get an IRC ID/PW from https://osu.ppy.sh/p/irc
+1. Paste it into your Config/irc...
+1. (Opt) Get a Bot Account from peppy. You don't need to since you can message yourself. I don't care if you get chatbanned though.
+
+## To be added
+1. PP Calcualtor
+1. ...? c:
